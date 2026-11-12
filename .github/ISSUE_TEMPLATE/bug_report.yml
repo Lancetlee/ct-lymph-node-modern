@@ -1,0 +1,43 @@
+name: Bug report
+description: Report a reproducible software defect using synthetic or public permitted inputs.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please use a small synthetic reproduction. Do not upload patient images, DICOM headers, identifiers, credentials, or private paths. Hardware-only reports can use the hardware validation form.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and expected behavior
+      description: Describe the concrete input or action, the observed result, and what you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Include commands and a small script or permitted fixture. Remove personal paths and identifiers.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include commit/version, OS, Python/PyTorch versions, CPU/GPU, interpreter architecture, and requested/actual backend.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitized error or diagnostic output
+      description: Include the full relevant error and doctor output if applicable. State any tests skipped.
+      render: text
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Public report
+      options:
+        - label: I reviewed this report and attachments for patient information, private material, and credentials.
+          required: true

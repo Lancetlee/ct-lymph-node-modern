@@ -1,0 +1,41 @@
+name: Feature proposal
+description: Propose a focused improvement or offer to help with the roadmap.
+title: "[Proposal]: "
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: Problem to solve
+      description: Describe the research or development workflow and the limitation you encountered.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Include a concrete example, alternatives considered, and any expected input/schema changes.
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Evidence and validation plan
+      description: Describe how correctness and any performance or medical claims would be assessed. Include dependency/data licenses if relevant.
+    validations:
+      required: true
+  - type: dropdown
+    id: help
+    attributes:
+      label: Would you like to contribute?
+      options:
+        - I can help discuss or review the approach.
+        - I can implement and test the change.
+        - I can provide target hardware validation.
+        - I am sharing a request only.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Public report
+      options:
+        - label: This proposal contains no patient information, private material, or credentials.
+          required: true

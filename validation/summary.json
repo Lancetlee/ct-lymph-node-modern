@@ -1,0 +1,37 @@
+{
+  "recorded_at_utc": "2026-11-12T06:43:29.351302+00:00",
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "dependencies": {
+    "torch": "2.15.0+cpu",
+    "numpy": "1.26.4",
+    "scipy": "1.17.1",
+    "nibabel": "5.4.2",
+    "PyYAML": "6.0.3",
+    "SimpleITK": "2.5.7",
+    "pytest": "9.2.0"
+  },
+  "pytest": {
+    "total": 53,
+    "passed": 51,
+    "skipped": 2,
+    "failed": 0
+  },
+  "skill_validator_passed": true,
+  "wheel_built_and_isolated_target_installed": true,
+  "installed_wheel_cpu_doctor_passed": true,
+  "wheel_sha256": "249eb9cadca6bacc105775798bce12a9c6280e4b872891017dc6a0af3db65856",
+  "actual_hardware_scope": "Windows CPU only; CUDA and Apple MPS hardware not available",
+  "m5_max_benchmark_executed": false,
+  "cuda_hardware_test_executed": false,
+  "real_pyradiomics_integration_passed": false,
+  "pyradiomics_skips": "2 tests require actual optional PyRadiomics; stubs do not count as extraction validation",
+  "pyradiomics_install_failure": "3.0.1 source package on Python 3.12: isolated build missing numpy; no-build-isolation fails obsolete configparser.SafeConfigParser metadata before compilation",
+  "legacy_h5_migration_completed": false,
+  "clinical_model_accuracy_validated": false,
+  "trained_clinical_weights_included": false,
+  "synthetic_end_to_end": "real optimizer update, trained-checkpoint reload, sliding-window inference, original physical grid, source hash preservation, known/explicitly asserted mm, held-out test not loaded",
+  "real_synthetic_dicom_io": "SimpleITK classic CT write/read, HU slope/intercept, nontrivial LPS/RAS, multiple-series selection and irregular spacing rejection",
+  "cpu_benchmark_note": "FP32 random network, base_channels=16, levels=4, 32^3 patch, single PyTorch CPU thread; no I/O/sliding window; not a GPU speed comparison"
+}

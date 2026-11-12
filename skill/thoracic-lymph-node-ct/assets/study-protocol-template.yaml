@@ -1,0 +1,44 @@
+# 研究设计模板，不是可直接运行的PyRadiomics配置；null项须由具体研究确定。
+protocol_version: "1.0"
+task:
+  objective: null
+  unit: null # node / station / patient
+  cancer_population: null
+  prediction_timepoint: null
+  intended_use: null
+  inclusion_exclusion: null
+reference_standard:
+  source: null
+  matching_level: null
+  handling_unknown_and_inadequate_negative: null
+imaging:
+  source_format_and_HU_provenance: null
+  contrast_phase: null
+  scanner_reconstruction_and_resolution: null
+  acquisition_to_reference_interval: null
+roi:
+  target: null # lymph_node / primary_tumor / separately_defined_periregion
+  dimension: null
+  reader_blinding_and_adjudication: null
+  necrosis_calcification_vessel_rules: null
+  periregion_mm_and_tissue_rules: null
+features:
+  software_and_dependencies: null
+  IBSI_benchmark_results: null
+  resampling_and_interpolation: null
+  discretization: null
+  texture_aggregation: null
+  feature_names_and_filters: null
+  reproducibility_plan: null
+splits:
+  patient_grouping_and_deduplication: null
+  internal_development: null
+  independent_test_definition: null
+  preprocessing_fit_scope: "training folds only"
+evaluation:
+  baseline_and_fusion_comparisons: null
+  metrics_and_clustered_uncertainty: null
+  locked_operating_threshold: null
+  calibration_and_subgroups: null
+  failure_and_exclusion_reporting: null
+  deployment_limits: null

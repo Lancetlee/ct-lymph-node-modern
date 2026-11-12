@@ -1,0 +1,4 @@
+patient_id,scan_id,image,mask,split
+EXAMPLE_P001,EXAMPLE_SCAN001,data/p001_ct.nii.gz,data/p001_mask.nii.gz,train
+EXAMPLE_P002,EXAMPLE_SCAN002,data/p002_ct.nii.gz,data/p002_mask.nii.gz,val
+EXAMPLE_P003,EXAMPLE_SCAN003,data/p003_ct.nii.gz,data/p003_mask.nii.gz,test

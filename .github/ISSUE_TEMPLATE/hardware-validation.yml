@@ -1,0 +1,49 @@
+name: Hardware validation
+description: Share actual MPS, CUDA, or CPU execution and numerical/performance results.
+title: "[Hardware]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Actual Apple Silicon (including M5 Max) and NVIDIA reports are welcome. Use synthetic inputs for public reports. See CONTRIBUTING.md for commands. A small-network probe, full-model validation, and clinical accuracy are separate results.
+  - type: input
+    id: hardware
+    attributes:
+      label: Exact chip/GPU and memory
+      placeholder: Chip or GPU model, system memory, and GPU memory if separate
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Software and backend
+      description: Include repository commit, OS version, native/Rosetta architecture, Python/PyTorch versions, requested/actual device, and PYTORCH_ENABLE_MPS_FALLBACK value.
+    validations:
+      required: true
+  - type: textarea
+    id: commands
+    attributes:
+      label: Exact commands and settings
+      description: Include doctor, validate-device, and benchmark commands; ROI, batch, base channels, levels, attention, precision, warmup, and iterations. Match CPU and GPU settings for a speed comparison.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: results
+    attributes:
+      label: Results and sanitized JSON reports
+      description: Attach reviewed reports or paste relevant output. Include failures, numerical tolerances/errors, and whether the complete trained-model path was tested. Distinguish current allocated memory from peak memory.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Measurement scope and limitations
+      description: State what timing includes, whether other workloads were active, any unavailable tests, and any configuration changes. Do not infer ANE use or clinical accuracy from MPS execution.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Public report
+      options:
+        - label: These are actual runs on the stated hardware, and I reviewed all reports for private data and credentials.
+          required: true

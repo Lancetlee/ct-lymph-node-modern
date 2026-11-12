@@ -1,0 +1,40 @@
+{
+  "purpose": "synthetic_execution_benchmark",
+  "trained": false,
+  "clinical_validation": false,
+  "device": "cpu",
+  "torch_version": "2.15.0+cpu",
+  "architecture": "ctln_attention_unet3d_v1",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "processor": "AMD64 Family 26 Model 68 Stepping 0, AuthenticAMD",
+  "python_version": "3.12.14",
+  "torch_cpu_threads": 1,
+  "torch_interop_threads": 8,
+  "mps_cpu_fallback_env": "unset",
+  "model_config": {
+    "in_channels": 1,
+    "num_classes": 2,
+    "base_channels": 16,
+    "levels": 4,
+    "attention": true
+  },
+  "roi_dhw": [
+    32,
+    32,
+    32
+  ],
+  "batch_size": 1,
+  "precision": "float32",
+  "iterations": 3,
+  "warmup": 1,
+  "latency_seconds": [
+    0.07747929997276515,
+    0.07304479996673763,
+    0.07536100002471358
+  ],
+  "median_seconds": 0.07536100002471358,
+  "patches_per_second": 13.269462980481471,
+  "includes_io_preprocessing_or_sliding_window": false,
+  "parameter_count": 1331565
+}

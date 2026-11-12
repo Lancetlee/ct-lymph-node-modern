@@ -1,0 +1,45 @@
+name: CPU tests
+
+'on':
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12']
+    env:
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Install CPU PyTorch
+        run: python -m pip install 'torch==2.15.0' --index-url https://download.pytorch.org/whl/cpu
+      - name: Install project and test dependencies
+        run: python -m pip install -e '.[dicom,dev]'
+      - name: Run synthetic and unit tests
+        run: python -m pytest tests -q -ra --junitxml=reports/pytest.xml
+      - name: Check CLI CPU execution
+        run: python -m ctln doctor --device cpu --output reports/doctor-cpu.json
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: cpu-validation-py${{ matrix.python-version }}
+          path: reports/
+          retention-days: 14

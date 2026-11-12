@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ctln-modern"
+version = "0.1.0"
+description = "Modern CPU/CUDA/Apple MPS thoracic lymph-node segmentation research pipeline"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+license = {text = "BSD-2-Clause"}
+dependencies = [
+  "torch>=2.8,<3",
+  "numpy>=1.26,<2",
+  "scipy>=1.11,<2",
+  "nibabel>=5.2,<6",
+  "PyYAML>=6,<7"
+]
+
+[project.optional-dependencies]
+dicom = ["SimpleITK>=2.4,<3"]
+radiomics = ["pyradiomics==3.0.1"]
+dev = ["pytest>=8,<10"]
+apple = ["torch>=2.14,<3"]
+
+[project.scripts]
+ctln = "ctln.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Lancetlee/ct-lymph-node-modern"
+Repository = "https://github.com/Lancetlee/ct-lymph-node-modern"
+Issues = "https://github.com/Lancetlee/ct-lymph-node-modern/issues"
+Contributing = "https://github.com/Lancetlee/ct-lymph-node-modern/blob/main/CONTRIBUTING.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

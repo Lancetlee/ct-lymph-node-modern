@@ -1,0 +1,63 @@
+{
+  "recorded_at_utc": "2026-11-12T06:14:07.256082+00:00",
+  "hardware_scope": "this Windows CPU host only; Apple Silicon MPS and CUDA not executed",
+  "doctor": {
+    "torch_version": "2.15.0+cpu",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "cuda_available": false,
+    "cuda_runtime": null,
+    "mps_built": false,
+    "mps_available": false,
+    "requested_device": "cpu",
+    "mps_cpu_fallback_env": "unset",
+    "default_precision": "float32",
+    "clinical_validation": false,
+    "selected_device": "cpu",
+    "smoke_test": {
+      "passed": true,
+      "forward_backward": true,
+      "shape": [
+        1,
+        2,
+        8,
+        8,
+        8
+      ],
+      "precision": "float32"
+    }
+  },
+  "benchmark": {
+    "purpose": "synthetic_execution_benchmark",
+    "trained": false,
+    "clinical_validation": false,
+    "device": "cpu",
+    "torch_version": "2.15.0+cpu",
+    "architecture": "ctln_attention_unet3d_v1",
+    "model_config": {
+      "in_channels": 1,
+      "num_classes": 2,
+      "base_channels": 4,
+      "levels": 3,
+      "attention": true
+    },
+    "roi_dhw": [
+      16,
+      16,
+      16
+    ],
+    "batch_size": 1,
+    "precision": "float32",
+    "iterations": 3,
+    "warmup": 1,
+    "latency_seconds": [
+      0.0011884999694302678,
+      0.0011400999501347542,
+      0.0011573000811040401
+    ],
+    "median_seconds": 0.0011573000811040401,
+    "patches_per_second": 864.0801260862445,
+    "includes_io_preprocessing_or_sliding_window": false,
+    "parameter_count": 20422
+  }
+}

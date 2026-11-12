@@ -1,0 +1,17 @@
+# Example only. Freeze settings for your actual CT acquisition and research task.
+imageType:
+  Original: {}
+featureClass:
+  shape: [MeshVolume, SurfaceArea, Sphericity, Elongation]
+  firstorder: [Mean, Median, Variance, Entropy, Uniformity]
+  glcm: [JointEntropy, Contrast, JointEnergy]
+  glrlm: [RunEntropy, RunVariance]
+  glszm: [ZoneEntropy]
+  gldm: [DependenceEntropy]
+  ngtdm: [Coarseness]
+setting:
+  binWidth: 25
+  normalize: false
+  interpolator: sitkBSpline
+  resampledPixelSpacing: [1.0, 1.0, 1.0]
+  additionalInfo: true

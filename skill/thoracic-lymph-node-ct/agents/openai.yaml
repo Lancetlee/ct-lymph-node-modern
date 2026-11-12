@@ -1,0 +1,4 @@
+interface:
+  display_name: "胸部淋巴结 CT 训练"
+  short_description: "依据解剖规范与文献，指导胸部淋巴结分站、逐结标注和放射组学训练数据"
+  default_prompt: "请使用 $thoracic-lymph-node-ct，根据我提供的CT资料进行淋巴结分站训练、标注质控或放射组学研究设计，并区分观察、证据与不确定项。"

@@ -1,0 +1,24 @@
+# Demonstration settings, not a clinically optimized protocol.
+model:
+  in_channels: 1
+  num_classes: 2
+  base_channels: 16
+  levels: 4
+  attention: true
+preprocessing:
+  target_spacing_dhw: [1.5, 1.0, 1.0]
+  hu_window: [-160, 240]
+  normalization: clip_linear
+training:
+  epochs: 100
+  patches_per_case: 4
+  roi_size: [64, 64, 64]
+  learning_rate: 0.0001
+  foreground_sampling_probability: 0.5
+  seed: 42
+  assume_nifti_hu: false
+  assume_nifti_mm: false
+  max_case_voxels: 134217728
+  validation_roi_size: [64, 64, 64]
+  max_accumulator_gib: 4.0
+  dataset_description: null

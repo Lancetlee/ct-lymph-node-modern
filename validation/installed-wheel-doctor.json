@@ -1,0 +1,26 @@
+{
+  "torch_version": "2.15.0+cpu",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "cuda_available": false,
+  "cuda_runtime": null,
+  "mps_built": false,
+  "mps_available": false,
+  "requested_device": "cpu",
+  "mps_cpu_fallback_env": "unset",
+  "default_precision": "float32",
+  "clinical_validation": false,
+  "selected_device": "cpu",
+  "smoke_test": {
+    "passed": true,
+    "forward_backward": true,
+    "shape": [
+      1,
+      2,
+      8,
+      8,
+      8
+    ],
+    "precision": "float32"
+  }
+}
